@@ -1,0 +1,29 @@
+Endpoints:
+
+Create a new list
++++++++++++++++++++
+POST
+http://localhost:10090/rest/api/todolist/create
+Example payload:
+{
+	"name": "myList",
+	"description":"My to do list"
+}
+
+Add an item to a list
++++++++++++++++++++
+POST
+http://localhost:10090/rest/api/todolist/item/add
+    -> will add the item to most recently created list
+http://localhost:10090/rest/api/todolist/item/add?list=myList
+    -> will add the item to specified list
+Example payload:
+{
+	"name": "First Item"
+}
+
+
+List all items in list
++++++++++++++++++++
+GET
+http://localhost:10090/rest/api/todolist/all?list=myList
